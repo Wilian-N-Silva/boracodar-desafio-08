@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - #boraCodar - 08</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="data-panel">
+        <div class="data-panel__container data-panel__container--centered">
+          <h2 class="data-panel__title">NPS geral</h2>
+          <div class="data-panel__data data-panel__data--simple">
+            <img src="./assets/icons/smile.svg" alt="" />
+            <h3 class="data-panel__status data-panel__status--excellent">
+              Excelente
+            </h3>
+          </div>
+          <ul class="data-panel__caption">
+            <li class="data-panel__item">NPS Score <span>75</span></li>
+          </ul>
+        </div>
+        <div class="data-panel__container data-panel__container--centered">
+          <h2 class="data-panel__title">Vendas fechadas</h2>
+          <div class="data-panel__data data-panel__data--simple">
+            <svg viewBox="0 0 36 36">
+              <linearGradient
+                id="donutGradient"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="rotate(0)"
+              >
+                <stop offset="16%" stop-color="#CE9FFC"></stop>
+                <stop offset="85%" stop-color="#7367F0"></stop>
+              </linearGradient>
+              <path
+                d="M18 2.0845056908104667
+          a 15.915494309189533 15.915494309189533 0 0 1 0 31.830988618379067
+          a 15.915494309189533 15.915494309189533 0 0 1 0 -31.830988618379067"
+                fill="none"
+                stroke="#D9D9D9"
+                stroke-opacity="0.1"
+                stroke-width="4"
+              ></path>
+              <path
+                d="M18 2.0845056908104667
+          a 15.915494309189533 15.915494309189533 0 0 1 0 31.830988618379067
+          a 15.915494309189533 15.915494309189533 0 0 1 0 -31.830988618379067"
+                fill="none"
+                class="donut__stroke"
+                stroke="url(#donutGradient)"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-dasharray="70, 100"
+              ></path>
+            </svg>
+          </div>
+          <ul class="data-panel__caption">
+            <li class="data-panel__item">
+              <span class="data-panel__item--icon">Esperado</span>
+              <span>100</span>
+            </li>
+            <li class="data-panel__item">
+              <span class="data-panel__item--icon">Alcançado</span>
+              <span>70</span>
+            </li>
+          </ul>
+        </div>
+        <div class="data-panel__container data-panel__container--centered">
+          <h2 class="data-panel__title">Meta mensal</h2>
+          <div class="data-panel__data data-panel__data--simple">
+            <svg viewBox="0 0 36 36">
+              <linearGradient
+                id="donutGradient2"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="rotate(58)"
+              >
+                <stop offset="16%" stop-color="#DF9780"></stop>
+                <stop offset="83%" stop-color="#A66DE9"></stop>
+              </linearGradient>
+              <path
+                d="M18 2.0845056908104667
+          a 15.915494309189533 15.915494309189533 0 0 1 0 31.830988618379067
+          a 15.915494309189533 15.915494309189533 0 0 1 0 -31.830988618379067"
+                fill="none"
+                stroke="#D9D9D9"
+                stroke-opacity="0.1"
+                stroke-width="4"
+              ></path>
+              <path
+                d="M18 2.0845056908104667
+          a 15.915494309189533 15.915494309189533 0 0 1 0 31.830988618379067
+          a 15.915494309189533 15.915494309189533 0 0 1 0 -31.830988618379067"
+                fill="none"
+                class="donut__stroke"
+                stroke="url(#donutGradient2)"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-dasharray="90, 100"
+              ></path>
+            </svg>
+          </div>
+          <ul class="data-panel__caption">
+            <li class="data-panel__item">
+              <span class="data-panel__item--icon">Esperado</span>
+              <span>R$ 70K</span>
+            </li>
+            <li class="data-panel__item">
+              <span class="data-panel__item--icon">Alcançado</span>
+              <span>R$ 63K</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="weekly-graph">
+        <div class="data-panel__container">
+          <h2 class="data-panel__title">Vendas por dia da semana</h2>
+          <div class="data-panel__data data-panel__data--weekly">
+            <div class="day-summary">
+              <div class="day-summary__info day-summary__info--more">
+                <h3>Dia com mais vendas</h3>
+                <h4>Quarta-feira</h4>
+              </div>
+              <div class="day-summary__info day-summary__info--less">
+                <h3>Dia com mais vendas</h3>
+                <h4>Domingo</h4>
+              </div>
+            </div>
+            <div class="data-panel__data data-panel__data--bar">
+              <div class="data-panel__day">
+                <div class="bar" style="--bar-size: 39px"></div>
+                <span>dom</span>
+              </div>
+              <div class="data-panel__day">
+                <div class="bar" style="--bar-size: 115px"></div>
+                <span>seg</span>
+              </div>
+              <div class="data-panel__day">
+                <div class="bar" style="--bar-size: 76px"></div>
+                <span>ter</span>
+              </div>
+              <div class="data-panel__day">
+                <div class="bar" style="--bar-size: 159px"></div>
+                <span>qua</span>
+              </div>
+              <div class="data-panel__day">
+                <div class="bar" style="--bar-size: 129px"></div>
+                <span>qui</span>
+              </div>
+              <div class="data-panel__day">
+                <div class="bar" style="--bar-size: 120px"></div>
+                <span>sex</span>
+              </div>
+              <div class="data-panel__day">
+                <div class="bar" style="--bar-size: 69px"></div>
+                <span>sab</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,226 @@
+:root {
+  --color-background: #292738;
+  --color-panel-info-container-background: #363447;
+  --color-panel-info-container-radius: 16px;
+  --color-panel-info-container-shadow: 3px 4px 26px rgba(0, 0, 0, 0.25);
+  --color-info-excellent: #81fbb8;
+
+  --color-text: #ffffff;
+  --donut-chart-size: 197px;
+
+  --typography-family: "Inter", sans-serif;
+  --typography-title: 600 24px/160% var(--typography-family);
+  --typography-day: 500 24px/160% var(--typography-family);
+  --typography-caption: 500 14px/160% var(--typography-family);
+  --typography-caption-data: 400 14px/160% var(--typography-family);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--typography-family);
+  color: var(--color-text);
+  background: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.data-panel__data--simple {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  align-items: center;
+  justify-content: center;
+  height: var(--donut-chart-size);
+  width: var(--donut-chart-size);
+}
+
+.data-panel__status {
+  font: var(--typography-title);
+}
+
+.data-panel__status--excellent {
+  color: var(--color-info-excellent);
+}
+
+.donut__stroke {
+  animation: donut-grow 1s ease-in-out forwards;
+}
+
+@keyframes donut-grow {
+  0% {
+    stroke-dasharray: 0, 100;
+  }
+}
+.data-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  align-self: center;
+}
+
+.data-panel__container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 29px 48px;
+  width: 100%;
+  align-self: center;
+
+  background-color: var(--color-panel-info-container-background);
+  border-radius: var(--color-panel-info-container-radius);
+  box-shadow: var(--color-panel-info-container-shadow);
+}
+.data-panel__container--centered {
+  align-items: center;
+}
+
+.data-panel__title {
+  font: var(--typography-title);
+}
+
+.data-panel__caption {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  font-size: 14px;
+}
+
+.data-panel__item {
+  display: flex;
+  gap: 10px;
+}
+
+.data-panel__item--icon {
+  display: flex;
+  gap: 4px;
+}
+.data-panel__item--icon::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+.weekly-graph {
+  display: flex;
+}
+
+.data-panel__data--weekly {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.data-panel__data--bar::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+}
+
+.day-summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.day-summary__info h3 {
+  font: var(--typography-caption);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.day-summary__info h3::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+
+.day-summary__info--more h3::before {
+  background: url("./assets/icons/arrow_up.svg") center no-repeat;
+}
+
+.day-summary__info--less h3::before {
+  background: url("./assets/icons/arrow_down.svg") center no-repeat;
+}
+
+.day-summary__info h4 {
+  font: var(--typography-day);
+}
+
+.data-panel__data--bar {
+  display: flex;
+  position: relative;
+  height: 200px;
+  align-items: end;
+  gap: 59px;
+  overflow: auto;
+}
+
+.data-panel__data--bar::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #d9d9d9;
+  opacity: 0.1;
+  align-self: center;
+}
+
+.data-panel__day {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.data-panel__day .bar {
+  height: var(--bar-size);
+  background: linear-gradient(180deg, #90f7ec 0%, #32ccbc 100%);
+  border-radius: 64px;
+  width: 15px;
+  animation: bar-grow 1s ease-in-out forwards;
+}
+
+@keyframes bar-grow {
+  0% {
+    height: 0px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .data-panel__data--weekly {
+    flex-direction: row;
+  }
+  .day-summary {
+    flex-direction: column;
+  }
+  .data-panel {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .container {
+    max-width: 1120px;
+  }
+}
